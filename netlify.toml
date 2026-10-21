@@ -1,0 +1,14 @@
+# Netlify deploys only the React frontend; the API runs separately (see render.yaml)
+[build]
+  base = "frontend"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# React Router uses real URLs (/menu, /checkout...), so send every path to index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

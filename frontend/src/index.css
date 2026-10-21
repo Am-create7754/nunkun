@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  body {
+    @apply bg-brand-cream text-gray-900 font-body overflow-x-hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+/* Custom scrollbar to match the design aesthetics */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F3EA; 
+}
+::-webkit-scrollbar-thumb {
+  background: #C96B4B; 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D08A63; 
+}
+
+/* Utility to completely hide scrollbar but keep functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
